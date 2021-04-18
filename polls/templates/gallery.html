@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block content %}
+
+<header>
+		<nav>
+			<input type="checkbox" id="checkbox-menu">
+			<label for="checkbox-menu">
+				<ul class="menu touch">
+					<li><a class="logo" href="{% url 'main' %}">ЭЛЕМЕНТ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="{% url 'gallery' %}">ФОТОГАЛЕРЕЯ</a></li>
+				</ul>	
+				<span class="toggle">☰</span>		
+			</label>
+		</nav>
+	</header>
+<main>
+	<section class="gallery-page wrapper">
+		<div class="photos-gallery">
+		{% for phot in context.photos %} 
+	            <div class="photo-gallery"> 
+	                <img src="{{ phot.photo.url }}" class="img-responsive" " />
+	            </div> 
+	    {% endfor %} 
+		</div>
+
+		<div class="gallery">
+			<div class="form-gallery">
+				{% if context.username == 'Admin' %}
+				<form method = "post" enctype="multipart/form-data"> 
+				        {% csrf_token %} 
+				        {{ context.form.as_p }} 
+				        <button type="submit" class="button-classic">ЗАГРУЗИТЬ</button> 
+				</form>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+</main>
+
+
+{% endblock %}

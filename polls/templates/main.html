@@ -1,0 +1,194 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block content %}
+
+<header>
+		<nav>
+			<input type="checkbox" id="checkbox-menu">
+			<label for="checkbox-menu">
+				<ul class="menu touch">
+					<li><a class="logo" href="{% url 'main' %}">ЭЛЕМЕНТ</a></li>
+					<li class="menu-item"><a class="menu-link" href="#programms">ПРОГРАММЫ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="#teachers">ПРЕПОДАВАТЕЛИ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="{% url 'schedule' %}">РАСПИСАНИЕ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="{% url 'gallery' %}">ФОТОГАЛЕРЕЯ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="#about-us">О&nbsp;&nbsp;НАС</a></li>
+					<li class="menu-item" ><a class="menu-link" href="#">ДЛЯ&nbsp;&nbsp;ПРЕПОДАВАТЕЛЕЙ</a>
+						<ul class="submenu">
+							{% if user.is_authenticated %}
+          						<li><a href="https://docs.google.com/spreadsheets/d/1fcJdwlJrX3h-ygRLhpFaBZXUp9NnU6pqDT0I5hfAGBY/edit?usp=sharing">ЭЛЕКТРОННЫЙ ЖУРНАЛ</a></li> <!-- электронный журнал доступен только когда препод уже зашел в свой аккаунт -->
+								<li><a href="{% url 'ulogout' %}">ВЫЙТИ</a></li>
+								<li><a href="#">В сети:&nbsp;&nbsp;{{ user.username }}</a></li>
+							{% else %}
+								<li><a href="{% url 'regist' %}">РЕГИСТРАЦИЯ</a></li>
+								<li><a href="{% url 'enter' %}">ВОЙТИ</a></li>
+							{% endif %}
+        				</ul>
+					</li>
+				</ul>	
+				<span class="toggle">☰</span>		
+			</label>
+		</nav>
+	</header>
+
+	<main>
+	<section class="intro wrapper">
+		<div class="intro-img" style="background-image: url({% static 'img/room2.jpg' %})">
+			<p class="intro-text">ПЕРВОЕ ЗАНЯТИE<br>АБСОЛЮТНО БЕСПЛАТНО
+				<button class="intro-button"><a href="#crmForm">ЗАПИСАТЬСЯ</a></button>
+			</p>
+			
+		</div>
+	</section>
+
+	<section id="programms" class="apartments">
+		<div class="wrapper apart">
+			<h2>Вы можете выбрать любое направление<br></h2>
+			<div class="cards">
+				<div class="card">
+					<div class="hidden-info"><p>Очень популярное направление. Здесь вы сможете расслабиться и отдохнуть с пользой для здоровья</p></div>
+					<img class="img-item" src="{% static 'img/02yoga.jpg' %}" >	
+					<div class="card-container">
+						<p><h3>Йога</h3></p>
+						<!-- <div class="card-info">
+							<div class="money">ФИ препода</div>
+							
+						</div> -->
+					</div>			
+				</div>
+				<div class="card">
+					<div class="hidden-info"><p>Если вы хотите сесть на шпагат, то вам сюда. Растяжка не только делает вас красивее, но и еще она очень полезна для организма</p></div>
+					<img class="img-item" src="{% static 'img/03stretch.jpg' %}" >
+					
+					<div class="card-container">
+						<p><h3>Стретчинг</h3></p>
+						<!-- <div class="card-info">
+							<div class="money">ФИ препода</div>
+						</div> -->
+					</div>			
+				</div>
+
+				<div class="card">
+					<div class="hidden-info"><p>Вас научат акробатическим элементам, улучшат ваше физическое состояние красиво</p></div>
+					<img class="img-item" src="{% static 'img/01acrobat.jpg' %}" >
+						
+
+					<div class="card-container">
+						<p><h3>Акробатика</h3></p>
+						<!-- <div class="card-info">
+							<div class="money">ФИ препода</div>
+							
+						</div> -->
+					</div>			
+				</div>		
+			</div>	
+		</div>		
+	 </section>
+
+	<section id="teachers" class="agents">
+		<div class="wrapper">
+			<h2>Наши преподаватели</h2>
+			
+			<div class="agent-cards">
+				<div class="agent-card">
+					<img src="{% static 'img/teach3.jpg' %}">
+					<div class="agent-info">
+						<p>Игорева Ирина</p>
+						<div class="agent-block">
+							<p class="agent-name">Йога</p>
+							<div class="social">
+								<i class="fab fa-instagram fa-3x"></i>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+			
+				<div class="agent-card">
+					<img src="{% static 'img/yoga.jpeg' %}">
+					<div class="agent-info">
+						<p>Иванова Яна</p>
+						<div class="agent-block">
+							<p class="agent-name">Стретчинг</p>
+							<div class="social">
+								<i class="fab fa-instagram fa-3x"></i>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="agent-card">
+					<img src="{% static 'img/teach1.jpg' %}">
+					<div class="agent-info">
+						<p>Петрова Елена</p>
+						<div class="agent-block">
+							<p class="agent-name">Акробатика</p>
+							<div class="social">
+								<i class="fab fa-instagram fa-3x"></i>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>	
+	</section>
+
+	<!-- <section id=gallery class="wrapper apart">
+		<h2>Галерея</h2>
+		<div class="cssSlider">
+			<ul class="slides">
+				<li id="slide1"><img src="{% static 'img/gal1.jpg' %}" alt="" /></li>
+				<li id="slide2"><img src="{% static 'img/gal2.jpg' %}" alt="" /></li>
+				<li id="slide3"><img src="{% static 'img/gal3.jpg' %}" alt="" /></li>
+				<li id="slide4"><img src="{% static 'img/gal4.jpg' %}" alt="" /></li>
+			</ul>
+			<ul class="thumbnails">
+				<li><a href="#slide1"><img src="{% static 'img/gal1.jpg' %}" /></a></li>
+				<li><a href="#slide2"><img src="{% static 'img/gal2.jpg' %}" /></a></li>
+				<li><a href="#slide3"><img src="{% static 'img/gal3.jpg' %}" /></a></li>
+				<li><a href="#slide4"><img src="{% static 'img/gal4.jpg' %}" /></a></li>
+				<li><a href="{% url 'gallery' %}" ><img src="{% static 'img/other.jpg' %}" /></a></li>
+			</ul>
+		</div>		
+	</section> -->
+
+
+	<section id="crmForm" class="crm-form">
+		<h2>Мы ждем Вас на наших занятиях</h2>
+		<div class="flex-container">
+			<div class="figure-background">
+				<div class="figure-text">
+					<p>Если вам интересно как проходят наши занятия, можете пройти на вкладку <a href="{% url 'gallery' %}"><b>ФОТОГАЛЕРЕЯ</b></a></p><br>
+					<p>Или позвонить нам по телефону: <a href="tel:+380985554433"></a>+380985554433</p>
+				</div>
+			</div>
+			
+			<iframe id="bx_form_iframe_7" name="bx_form_iframe_7" src="https://b24-0i52pp.bitrix24.ru/pub/form.php?view=frame&amp;form_id=7&amp;widget_user_lang=ru&amp;sec=jtvbxt&amp;r=1591249757912#%7B%22domain%22%3A%22file%3A%2F%2F%22%2C%22from%22%3A%22file%3A%2F%2F%2FC%3A%2FUsers%2FIrina%2FDesktop%2F%25D0%2598%25D1%2580%25D0%25B8%25D0%25BD%25D0%25B0%2Fsite%2Findex.html%23crmForm%22%2C%22options%22%3A%7B%7D%7D" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" style="right: 0; width: 600px; height: 1000px; border: 0px; overflow: hidden; padding: 0; margin: 0;">
+			</iframe>
+		</div>
+	</section>
+	
+
+	<section id="about-us" class="about-us">
+		<div class="wrapper">
+			<h2>О нас</h2>
+			<div class="about-us-info">
+				<div id="map" class="map" style="width:500px; height:400px"></div>
+				<div class="map-text">
+					<h3>Мы находимся на Щорса 27, вход сбоку</h3>
+					<h4>Вы можете нас найти в социальных сетях:</h4>
+					<div class="social">
+						<i class="fab fa-vk fa-3x"></i>
+						<i class="fab fa-instagram fa-3x"></i>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+		
+	</section>
+</main>
+{% endblock %}

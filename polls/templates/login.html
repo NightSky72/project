@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block content %}
+<header>
+		<nav>
+			<input type="checkbox" id="checkbox-menu">
+			<label for="checkbox-menu">
+				<ul class="menu touch">
+					<li><a class="logo" href="{% url 'main' %}">ЭЛЕМЕНТ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="{% url 'enter' %}">ВОЙТИ</a></li>
+				</ul>	
+				<span class="toggle">☰</span>		
+			</label>
+		</nav>
+	</header>
+<main>
+
+<section class="wrapper apartments">
+	<div class="regist">
+		<div class="flex-item main">
+			  <div class="form-group">
+			  {% for error in field.errors %}
+					<div >
+					<strong>Ошибка:</strong>
+					<p>{{ error }}</p>
+					</div>
+			  {% endfor %}
+			  </div>
+			{% if next %}
+				{% if user.is_authenticated %}
+				<div >
+					<strong>Ошибка!</strong> Пользователь не имеет доступа к данной странице.
+					<br/>Для продолжения войдите под пользователем, который имеет доступ.
+				</div>
+				{% else %}
+				<div>
+					<strong>Ошибка!</strong> Пользователь не вошел в систему, чтобы просмотреть данную страницу.
+				</div>
+				{% endif %}
+			{% endif %}
+
+
+				<div id = "login">
+					<form action="." method="post">
+						{% csrf_token %}
+						<div>
+							{% for field in form %}
+							<div class="form-group">
+								<div class="label-change">{{field.label_tag}}</div>
+								<div>
+									{{field}}
+								</div>
+								<div class="error">{{field.errors}}
+
+								</div>
+							</div>
+						{% endfor %}
+						</div>
+						<p><button type="submit" class="button-classic">ВОЙТИ</button></p>
+					</form>
+				</div>
+		</div>
+	</div>
+</section>
+</main>
+{% endblock %}

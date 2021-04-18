@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+	<script src="https://kit.fontawesome.com/8295607d2b.js" crossorigin="anonymous"></script>
+	<script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+	<title>ELEMENT</title>
+</head>
+<body>
+	{% block content %}
+
+	{% endblock %}
+	<footer>
+		<div class="wrapper">
+			<div class="footer-block">
+				<div class="footer-logo">
+					<h3>ЭЛЕМЕНТ</h3>
+				</div>
+				
+			</div>
+			<hr>
+			<div class="footer-links">
+				<div class="footer-links-logo">
+					<h4>ЭЛЕМЕНТ</h4>
+				</div>
+				<div class="footer-link">
+					<p>ЭЛЕМЕНТ</p>
+					<a href="#">ПРОГРАММЫ</a>
+					<a href="#">ПРЕПОДАВАТЕЛИ</a>
+					<a href="#">О НАС</a>
+				</div>
+				<div class="footer-link">
+					<p>ЭЛЕМЕНТ</p>
+					<a href="#">РАСПИСАНИЕ</a>
+					<a href="#">ФОТОГАЛЕРЕЯ</a>
+				</div>
+				<div class="footer-link">
+					<p>ДЛЯ ПРЕПОДАВАТЕЛЕЙ</p>
+					<a href="#">РЕГИСТРАЦИЯ</a>
+					<a href="#">ВОЙТИ</a>
+					<a href="#">ВЫЙТИ</a>
+					<a href="#">ЭЛЕКТРОННЫЙ ЖУРНАЛ</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<a href="#" title="Вернуться наверх" class="buttonup"><i class="fas fa-angle-double-up fa-3x"></i></a>
+	<script type="text/javascript">
+	    var map;
+
+	    DG.then(function () {
+	        map = DG.map('map', {
+	            center: [55.9928,92.9625],
+	            zoom: 17
+	        });
+	        DG.marker([55.9928,92.9625]).addTo(map).bindPopup('Мы здесь! Вход сбоку');
+	    });
+	</script>
+	<script src="script.js"></script>
+</body>
+</html>

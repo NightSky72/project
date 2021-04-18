@@ -1,0 +1,566 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+{% block content %}
+<header>
+		<nav>
+			<input type="checkbox" id="checkbox-menu">
+			<label for="checkbox-menu">
+				<ul class="menu touch">
+					<li><a class="logo" href="{% url 'main' %}">ЭЛЕМЕНТ</a></li>
+					<li class="menu-item" ><a class="menu-link" href="{% url 'schedule' %}">РАСПИСАНИЕ</a></li>
+				</ul>	
+				<span class="toggle">☰</span>		
+			</label>
+		</nav>
+	</header>
+<main>
+<section id="schedule" class="schedule wrapper" >
+	<div >
+		<frame>
+		<table>
+				<tr>
+					<th></th>
+					<th>ПН</th>
+					<th>ВТ</th>
+					<th>СР</th>
+					<th>ЧТ</th>
+					<th>ПТ</th>
+					<th>СБ</th>
+				</tr> <!--ряд с ячейками заголовков-->
+				<tr>
+					<th>14:00-15:00</th>
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">1</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '1' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">2</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '2' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">3</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '3' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">4</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '4' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">5</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '5' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">6</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '6' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+					</tr>
+				<tr>
+					<th>15:00-16:00</th>
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">7</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '7' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">8</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '8' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">9</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '9' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">10</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '10' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">11</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '11' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">12</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '12' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+					</tr>
+				<tr>
+							<th>17:00-18:00</th>
+					<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">13</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '13' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">14</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '14' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">15</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '15' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">16</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '16' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">17</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '17' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">18</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '18' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+				</tr>
+				<tr>
+							<th>18:00-19:00</th>
+					<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">19</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '19' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">20</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '20' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">21</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '21' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">22</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '22' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">23</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '23' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">24</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '24' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+				</tr>
+				<tr>
+							<th>19:00-20:00</th>
+					<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">25</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '25' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">26</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '26' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">27</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '27' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">28</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '28' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">29</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '29' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">30</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '30' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+				</tr>
+				<tr>
+					<th>20:00-21:00</th>
+					<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">31</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '31' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">32</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '32' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">33</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '33' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">34</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '34' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">35</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '35' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+
+
+						<td>
+							{% if context.username == 'Admin' %}
+								<span class="number-td">36</span><br>
+							{% endif %}
+							{% for sch in context.schedule %}
+								{% for t in context.teacher %}
+									{% if sch.number == '36' and sch.id_teacher_id == t.id and sch.name_class != null %}
+										{{ sch.name_class }} <br> {{ t.Name }}&nbsp;{{ t.Surname }}
+									{% endif %}
+								{% endfor %}
+							{% endfor %}
+						</td>
+				</tr>
+
+			</table>
+		</frame>
+	</div>
+	<div class="form-admin-schedule">
+		{% if context.username == 'Admin' %}
+			<form method="POST">
+				{% csrf_token %}
+        		<div>
+			        {% for field in context.form %}
+			        <div class="row">
+			            {{field.label_tag}}
+			            <div class="col-md-10">{{field}}</div>
+			            {% if field.errors%}
+			            <!-- <div class="error">{{field.errors}}</div> -->
+			            {% endif %}
+			        </div>
+			        {% endfor %}
+			    </div>
+        		<button type="submit" class="button-classic">СОХРАНИТЬ</button>
+    		</form>
+		{% endif %}
+	</div>
+	
+</section>
+</main>
+{% endblock %}
